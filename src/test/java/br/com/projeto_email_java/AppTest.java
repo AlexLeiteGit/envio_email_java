@@ -23,14 +23,27 @@ public class AppTest {
 	@org.junit.Test
 	public void testeEmail() throws Exception {
 		
+		StringBuilder stringBuilderTextoEmail = new StringBuilder();
+		
+		stringBuilderTextoEmail.append("Olá dileto Aluno, <br/><br/>");
+		stringBuilderTextoEmail.append("Você está recebendo o acesso ao seu curso. <br/><br/>");
+		stringBuilderTextoEmail.append("Para iniciar seu aprendizado, clique no botão abaixo e se divirta no processo. <br/><br/>");
+		
+		stringBuilderTextoEmail.append("<b>Login: </b> teste@teste.com.br<br/>");
+		stringBuilderTextoEmail.append("<b>Senha: </> abcd,1234<br/><br/>");
+		
+		stringBuilderTextoEmail.append("<a target=\"_blank\" href=\"https://loiane.training/\" style=\"color:#2525a7; padding: 10px 15px; text-align:center; text-decoration: none; display:inline-block; border-radius: 25px; font-size: 12px; font-family:courier; border: 3px solid green; background-color:#99DA39; \">Acessar Portal do Aluno</a> <br/><br/>");
+		
+		stringBuilderTextoEmail.append("<span style=\"font-size:8px\">Ass.: Alex Ferreira Leite</span>");
+		
 		ObjetoEnviarEmail teste = new ObjetoEnviarEmail(
 				"alex.f.leite@gmail.com", 
-				"Alex Ferreira Leite", 
-				"Testando Classe de Envio de Email em Java", 
-				"Obrigado por receber este eamil de teste!"
+				"Alex Ferreira Leite",
+				"Projeto JavaMail", 
+				stringBuilderTextoEmail.toString()
 		);
 		
-		teste.enviarEmail();
+		teste.enviarEmail(true);
 			
 	}
 }
