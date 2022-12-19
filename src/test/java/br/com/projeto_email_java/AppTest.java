@@ -43,7 +43,7 @@ public class AppTest {
 				stringBuilderTextoEmail.toString()
 		);
 		
-		teste.enviarEmail(true);
+		teste.enviarEmailAnexoLista(true);
 			
 	}
 }
